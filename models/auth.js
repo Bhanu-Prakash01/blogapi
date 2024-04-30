@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const AuthSchema = new mongoose.Schema({
-  name: {
+  username: {
     type: String,
     required: true
   },
@@ -12,6 +12,10 @@ const AuthSchema = new mongoose.Schema({
   time: {
       type: Date,
       default:Date.now()
+  },
+  isadmin: {
+    type: Boolean,
+    default:false
   }
 });
 

@@ -1,16 +1,31 @@
 const mongoose = require('mongoose');
 
 const BlogSchema = new mongoose.Schema({
-  name: {
+  title: {
     type: String,
     required: true
   },
-  color: {
+  content: {
       type: String,
       required: true
   },
-  year: {
-      type: Date
+  author: {
+    type: String,
+    required: true
+  },
+  tags: {
+    type: [String]
+  },
+  readable:{ 
+    type: Boolean,
+    default:true
+  },
+  comments: {
+    type: [{text:String,commenter:String}]
+  },
+  time: {
+      type: Date,
+      default:Date.now()
   }
 });
 
